@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fa/css/all.min.css' %}">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container my-2">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+            <div class="col">
+                <div class="card shadow-sm">
+                    <form action="addrecord/" method="post">
+                        {% csrf_token %}
+                        <div class="card-header">Add Members</div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="first-name" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="first-name" placeholder="First Name"
+                                    name="first">
+                            </div>
+                            <div class="mb-0">
+                                <label for="last-name" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="last-name" placeholder="Last Name"
+                                    name="last">
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-sm btn-success" value="Submit">Add</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
